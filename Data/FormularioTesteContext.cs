@@ -16,5 +16,13 @@ namespace FormularioTeste.Data
 
         public DbSet<Denuncia> Denuncia { get; set; } = default!;
         public DbSet<Estabelecimento> Estabelecimentos { get; set; } = default!;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Estabelecimento>()
+                .HasKey(
+                    p => new { p.CnpjBasico, p.CnpjOrdem, p.CnpjDv });
+
+        }
     }
 }

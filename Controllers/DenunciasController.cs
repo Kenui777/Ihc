@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FormularioTeste.Data;
-using Validacao_Form.Models;
+using FormularioTeste.Models;
 
 namespace FormularioTeste.Controllers
 {

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FormularioTeste.Models;
 using Microsoft.EntityFrameworkCore;
-using Validacao_Form.Models;
 
 namespace FormularioTeste.Data
 {
@@ -14,6 +14,7 @@ namespace FormularioTeste.Data
         {
         }
 
-        public DbSet<Validacao_Form.Models.Denuncia> Denuncia { get; set; } = default!;
+        public DbSet<Denuncia> Denuncia { get; set; } = default!;
+        public DbSet<Estabelecimento> Estabelecimentos { get; set; } = default!;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Validacao_Form.Models
+namespace FormularioTeste.Models
 {
     public class Denuncia
     {

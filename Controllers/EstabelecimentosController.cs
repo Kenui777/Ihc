@@ -66,19 +66,19 @@ namespace FormularioTeste.Controllers
         }
 
         // GET: Estabelecimentos/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(string id, string cnpjordem, string cnpjdv)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var estabelecimento = await _context.Estabelecimentos.FindAsync(id);
+            var estabelecimento = await _context.Estabelecimentos.FindAsync(id, cnpjordem, cnpjdv);
             if (estabelecimento == null)
             {
                 return NotFound();
             }
-            return View(estabelecimento);
+            return View("Create", estabelecimento);
         }
 
         // POST: Estabelecimentos/Edit/5
@@ -86,9 +86,9 @@ namespace FormularioTeste.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("CnpjBasico,CnpjOrdem,CnpjDv,NomeFantasia,DataSituacaoCadastral,CnaePrincipal,TpLogradouro,Logradouro,Numero,Complemento,Bairro,CEP,UF,Cidade,Email")] Estabelecimento estabelecimento)
+        public async Task<IActionResult> Edit(string id, string cnpjordem, string cnpjdv, [Bind("CnpjBasico,CnpjOrdem,CnpjDv,NomeFantasia,DataSituacaoCadastral,CnaePrincipal,TpLogradouro,Logradouro,Numero,Complemento,Bairro,CEP,UF,Cidade,Email")] Estabelecimento estabelecimento)
         {
-            if (id != estabelecimento.CnpjBasico)
+            if (id != estabelecimento.CnpjBasico || cnpjordem != estabelecimento.CnpjOrdem || cnpjdv != estabelecimento.CnpjDv)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace FormularioTeste.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EstabelecimentoExists(estabelecimento.CnpjBasico))
+                    if (!EstabelecimentoExists(estabelecimento.CnpjBasico, estabelecimento.CnpjOrdem, estabelecimento.CnpjDv))
                     {
                         return NotFound();
                     }
@@ -117,7 +117,7 @@ namespace FormularioTeste.Controllers
         }
 
         // GET: Estabelecimentos/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(string id, string cnpjordem, string cnpjdv)
         {
             if (id == null)
             {
@@ -125,7 +125,7 @@ namespace FormularioTeste.Controllers
             }
 
             var estabelecimento = await _context.Estabelecimentos
-                .FirstOrDefaultAsync(m => m.CnpjBasico == id);
+                .FirstOrDefaultAsync(m => m.CnpjBasico == id && m.CnpjOrdem == cnpjordem && m.CnpjDv == cnpjdv );
             if (estabelecimento == null)
             {
                 return NotFound();
@@ -137,9 +137,9 @@ namespace FormularioTeste.Controllers
         // POST: Estabelecimentos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(string id, string cnpjordem, string cnpjdv)
         {
-            var estabelecimento = await _context.Estabelecimentos.FindAsync(id);
+            var estabelecimento = await _context.Estabelecimentos.FindAsync(id, cnpjordem, cnpjdv);
             if (estabelecimento != null)
             {
                 _context.Estabelecimentos.Remove(estabelecimento);
@@ -149,9 +149,9 @@ namespace FormularioTeste.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EstabelecimentoExists(string id)
+        private bool EstabelecimentoExists(string id, string cnpjordem, string cnpjdv)
         {
-            return _context.Estabelecimentos.Any(e => e.CnpjBasico == id);
+            return _context.Estabelecimentos.Any(e => e.CnpjBasico == id && e.CnpjOrdem == cnpjordem && e.CnpjDv == cnpjdv);
         }
     }
 }

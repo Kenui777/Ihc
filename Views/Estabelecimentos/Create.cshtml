@@ -114,5 +114,7 @@
 </div>
 
 @section Scripts {
+    @{await Html.RenderPartialAsync("_ImaskScriptsPartial");}
+    @{await Html.RenderPartialAsync("_ImaskEstabelecimentoPartial");}
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

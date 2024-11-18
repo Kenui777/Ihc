@@ -158,7 +158,9 @@ body {
     padding: 10px;
     border-radius: 5px;
 }
-
 .text-right {
     text-align: right;
+    position: relative;
+    z-index: 1;
 }
+

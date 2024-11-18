@@ -11,7 +11,8 @@
 <hr />
 <div class="row light-blue">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        @using (Html.BeginForm("Edit", "Estabelecimentos", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
+        {
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CnpjBasico" />
             <input type="hidden" asp-for="CnpjOrdem" />
@@ -79,12 +80,11 @@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
-        </form>
+        }
     </div>
 </div>
 
-<div style="text-align: right;">
-
+<div class="text-right">
     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>
 

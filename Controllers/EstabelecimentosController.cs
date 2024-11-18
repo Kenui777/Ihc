@@ -125,7 +125,7 @@ namespace FormularioTeste.Controllers
             }
 
             var estabelecimento = await _context.Estabelecimentos
-                .FirstOrDefaultAsync(m => m.CnpjBasico == id && m.CnpjOrdem == cnpjordem && m.CnpjDv == cnpjdv );
+                .FirstOrDefaultAsync(m => m.CnpjBasico == id && m.CnpjOrdem == cnpjordem && m.CnpjDv == cnpjdv);
             if (estabelecimento == null)
             {
                 return NotFound();

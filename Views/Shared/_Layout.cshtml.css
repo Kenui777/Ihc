@@ -2,47 +2,54 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 a {
-  color: #0077cc;
+    color: #0077cc;
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
 }
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px)[_{{{CITATION{{{_1{](https://github.com/AustinWay/Static-Bootstrap5-Template-Generator/tree/5565648f6800e3f536830c772da795aea5966356/Static-Bootstrap5-Template-Generator.sh)[_{{{CITATION{{{_2{](https://github.com/x-j-j/reviewLearned/tree/daba02ffc2463ce59f832e66473c3e129d60a48f/%E9%A1%B9%E7%9B%AE%2F%E5%AE%89%E5%85%A8%E9%9D%B6%E5%9C%BA%2Fdocker%2Fdockerfile_day4%2Fday4%2Fmarket.php)[_{{{CITATION{{{_3{](https://github.com/safayatzisan/IssueTracker/tree/2c7d0496d7e45246623169eca7dcac5347496ce3/IssueTracker%2FIssueTracker%2Fobj%2FDebug%2Fnetcoreapp2.1%2FRazor%2FViews%2FChatter%2FIndex.g.cshtml.cs)

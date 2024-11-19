@@ -21,8 +21,7 @@
 <hr />
 <div class="row light-blue">
     <div class="col-md-4">
-        @using (Html.BeginForm(action, "Estabelecimentos", FormMethod.Post,
-        new { @class = "needs-validation", novalidate = "true" }))
+        @using (Html.BeginForm(action, "Estabelecimentos", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
         {
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">

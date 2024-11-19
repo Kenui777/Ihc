@@ -9,7 +9,13 @@ a.navbar-brand {
 
 a {
     color: #0077cc;
+    text-decoration: none; /* Adicionado para garantir que os links sejam visíveis */
 }
+
+    a:hover {
+        color: #0056b3; /* Adicionado para efeito de hover */
+        text-decoration: underline; /* Adicionado para efeito de hover */
+    }
 
 .btn-primary {
     color: #fff;
@@ -158,9 +164,9 @@ body {
     padding: 10px;
     border-radius: 5px;
 }
+
 .text-right {
     text-align: right;
     position: relative;
     z-index: 1;
 }
-

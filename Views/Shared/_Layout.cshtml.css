@@ -1,5 +1,4 @@
-﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. lllll*/
+﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
     white-space: normal;
@@ -9,7 +8,13 @@ a.navbar-brand {
 
 a {
     color: #0077cc;
+    text-decoration: none; /* Adicionado para garantir que os links sejam visíveis */
 }
+
+    a:hover {
+        color: #0056b3; /* Adicionado para efeito de hover */
+        text-decoration: underline; /* Adicionado para efeito de hover */
+    }
 
 .btn-primary {
     color: #fff;
@@ -52,4 +57,6 @@ html {
     font-size: 14px;
 }
 
-@media (min-width: 768px)[_{{{CITATION{{{_1{](https://github.com/AustinWay/Static-Bootstrap5-Template-Generator/tree/5565648f6800e3f536830c772da795aea5966356/Static-Bootstrap5-Template-Generator.sh)[_{{{CITATION{{{_2{](https://github.com/x-j-j/reviewLearned/tree/daba02ffc2463ce59f832e66473c3e129d60a48f/%E9%A1%B9%E7%9B%AE%2F%E5%AE%89%E5%85%A8%E9%9D%B6%E5%9C%BA%2Fdocker%2Fdockerfile_day4%2Fday4%2Fmarket.php)[_{{{CITATION{{{_3{](https://github.com/safayatzisan/IssueTracker/tree/2c7d0496d7e45246623169eca7dcac5347496ce3/IssueTracker%2FIssueTracker%2Fobj%2FDebug%2Fnetcoreapp2.1%2FRazor%2FViews%2FChatter%2FIndex.g.cshtml.cs)
+@media (min-width: 768px) {
+    /* Adicione aqui qualquer regra específica para telas maiores */
+}

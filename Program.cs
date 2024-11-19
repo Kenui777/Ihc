@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using FormularioTeste.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<FormularioTesteContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("FormularioTesteContext") ?? throw new InvalidOperationException("Connection string 'FormularioTesteContext' not found.")));
@@ -28,5 +29,9 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "estabelecimentos",
+    pattern: "{controller=Estabelecimentos}/{action=Index}/{id?}");
 
 app.Run();

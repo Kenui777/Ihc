@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FormularioTeste.Data;
 using FormularioTeste.Models;
@@ -22,7 +21,8 @@ namespace FormularioTeste.Controllers
         // GET: Estabelecimentos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Estabelecimentos.ToListAsync());
+            var estabelecimentos = await _context.Estabelecimentos.ToListAsync();
+            return View(estabelecimentos);
         }
 
         // GET: Estabelecimentos/Details/5
@@ -58,7 +58,7 @@ namespace FormularioTeste.Controllers
             {
                 _context.Add(estabelecimento);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index)); // Redireciona para a página de lista de estabelecimentos
             }
             return View(estabelecimento);
         }
@@ -107,7 +107,7 @@ namespace FormularioTeste.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index)); // Redireciona para a página de lista de estabelecimentos
             }
             return View(estabelecimento);
         }
@@ -142,7 +142,7 @@ namespace FormularioTeste.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index)); // Redireciona para a página de lista de estabelecimentos
         }
 
         private bool EstabelecimentoExists(string id, string cnpjordem, string cnpjdv)

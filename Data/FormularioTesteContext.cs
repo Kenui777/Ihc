@@ -25,13 +25,15 @@ namespace FormularioTeste.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=FormularioTesteContext-55837d85-046f-430f-b029-f714387a192d;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True",
+            optionsBuilder.UseSqlServer(
+                "Server=.\\SQLEXPRESS;Database=FormularioTesteContext-55837d85-046f-430f-b029-f714387a192d;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True;Connect Timeout=60",  // Aumentado para 60 segundos
                 sqlServerOptionsAction: sqlOptions =>
                 {
                     sqlOptions.EnableRetryOnFailure(
                         maxRetryCount: 5,
                         maxRetryDelay: TimeSpan.FromSeconds(30),
                         errorNumbersToAdd: null);
+                    sqlOptions.CommandTimeout(120);  // Aumentado o tempo limite da consulta para 120 segundos
                 });
         }
     }

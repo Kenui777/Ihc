@@ -33,6 +33,11 @@ a {
     color: #fff;
     background-color: #6c757d;
     border-color: #6c757d;
+    display: inline-block; /* Garante que o link seja tratado como um botão */
+    position: relative; /* Corrige sobreposição de outros elementos */
+    z-index: 10; /* Garante que o botão esteja acima de outros elementos */
+    visibility: visible; /* Garantir que o botão seja visível */
+    pointer-events: auto; /* Permitir interação com o botão */
 }
 
 .btn {
